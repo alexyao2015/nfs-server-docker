@@ -100,7 +100,7 @@ jobs:
       - name: Push image
         if: ${{ github.ref == 'refs/heads/master' }}
         run: |
-          docker/publish.py \
+          publish.py \
             --tag ${GITHUB_REF##*/} \
             --repo ${{ matrix.registry.repo }} \
             --image \
