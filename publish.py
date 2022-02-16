@@ -16,7 +16,7 @@ ARCH_ARMV7 = "armv7"
 ARCH_ARM64 = "aarch64"
 ARCHS = [ARCH_386, ARCH_AMD64, ARCH_ARMV6, ARCH_ARMV7, ARCH_ARM64]
 
-PUBLISH_LATEST = "{repo}:{arch}-latest"
+PUBLISH_LATEST = "{repo}:latest"
 
 PUBLISH_NAMES = [
     "{repo}:{run_number}",
