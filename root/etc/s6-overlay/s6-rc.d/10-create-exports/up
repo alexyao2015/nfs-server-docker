@@ -1,1 +1,1 @@
-/bin/sh -c "run"
+/bin/sh -c "./run"

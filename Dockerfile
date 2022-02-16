@@ -35,7 +35,12 @@ RUN set -x \
 
 # Ensure exports is empty
 RUN set -x \
-    && echo "" > /etc/exports
+    && echo "" > /etc/exports \
+
+RUN set -x \
+    && mkdir -p /log \
+    && chmod 755 /log \
+    && chown nobody:nobody /log
 
 COPY --from=s6downloader /s6downloader /
 COPY --from=rootfs /rootfs /
