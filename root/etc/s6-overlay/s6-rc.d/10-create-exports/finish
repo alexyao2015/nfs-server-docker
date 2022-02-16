@@ -1,4 +1,0 @@
-#!/command/with-contenv /bin/sh
-
-/usr/sbin/exportfs -uav
-/run/s6/basedir/bin/halt
