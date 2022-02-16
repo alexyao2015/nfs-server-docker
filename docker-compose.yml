@@ -1,0 +1,14 @@
+version: '3.6'
+
+services:
+  nfs-server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    privileged: true
+    volumes:
+      - ./nfs/:/data/nfs/
+      - ./log:/log
+    environment:
+      - SHARED_DIRECTORY_1=/data/nfs

@@ -1,4 +1,4 @@
-#!/command/with-contenv sh
+#!/command/with-contenv /bin/sh
 . "/usr/local/bin/logger"
 # ==============================================================================
 # nfsd
@@ -6,9 +6,9 @@
 # ==============================================================================
 
 echo "Starting nfsd..." | info
-# Make oneshot
 
+# shellcheck disable=SC2086
 exec \
     fdmove -c 2 1 \
       /usr/sbin/rpc.nfsd \
-      "${NFSD_ARGUMENTS}"
+      ${NFSD_ARGUMENTS}

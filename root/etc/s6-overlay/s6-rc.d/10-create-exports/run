@@ -1,4 +1,4 @@
-#!/command/with-contenv sh
+#!/command/with-contenv /bin/sh
 . "/usr/local/bin/logger"
 program_name="create-exports"
 
@@ -10,21 +10,24 @@ if [ -z "${SHARED_DIRECTORY_1}" ]; then
   exit 1
 fi
 
-# https://unix.stackexchange.com/a/507242
-for (( i=1 ; ; i++ )); do
+i=1
+while true; do
     shared="SHARED_DIRECTORY_${i}"
-    [ "${!shared+x}" ] || break # see if it exists
+    eval shared=\"\$$shared\"
+    if [ -z "${shared}" ]; then
+        break
+    fi
     mount_settings="MOUNT_SETTINGS_${i}"
-    if [ ${!mount_settings} ]; then
+    eval mount_settings=\"\$$mount_settings\"
+    if [ "${mount_settings}" ]; then
         mount_settings="${!mount_settings}"
     else
         mount_settings="${DEFAULT_MOUNT_SETTINGS}"
         echo "The mount settings for shared directory ${i} have not been defined" | warn "[${program_name}] "
         echo "Using default settings for this mount point" | warn "[${program_name}] "
-        echo "The settings used for this mount point are:" | warn "[${program_name}] "
-        echo "${mount_settings}" | warn "[${program_name}] "
     fi
     echo "Using the following settings for mount ${i}:" | info "[${program_name}] "
-    echo "${!shared} ${!mount_settings}" | info "[${program_name}] "
-    echo "${!shared} ${!mount_settings}" >> /etc/exports
+    echo "${shared} ${mount_settings}" | info "[${program_name}] "
+    echo "${shared} ${mount_settings}" >> /etc/exports
+    i=$(( i+1 ))
 done

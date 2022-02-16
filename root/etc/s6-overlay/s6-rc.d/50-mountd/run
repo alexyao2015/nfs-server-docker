@@ -1,4 +1,4 @@
-#!/command/with-contenv sh
+#!/command/with-contenv /bin/sh
 . "/usr/local/bin/logger"
 # ==============================================================================
 # mountd
@@ -7,9 +7,10 @@
 
 echo "Starting mountd..." | info
 
+# shellcheck disable=SC2086
 exec \
     fdmove -c 2 1 \
       /usr/sbin/rpc.mountd \
         --foreground \
         --debug all \
-        "${MOUNTD_ARGUMENTS}"
+        ${MOUNTD_ARGUMENTS}

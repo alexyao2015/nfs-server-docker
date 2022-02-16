@@ -1,4 +1,4 @@
-#!/command/with-contenv sh
+#!/command/with-contenv /bin/sh
 
 log() {
   echo "${1}" | s6-tai64n | s6-tai64nlocal | cat

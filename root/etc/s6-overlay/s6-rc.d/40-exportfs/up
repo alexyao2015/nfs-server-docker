@@ -1,1 +1,1 @@
-/bin/sh -c "./run"
+/etc/s6-overlay/s6-rc.d/40-exportfs/run

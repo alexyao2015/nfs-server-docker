@@ -29,13 +29,16 @@ RUN set -x \
 
 # Configure for NFS v4 support
 RUN set -x \
-    && mkdir -p /var/lib/nfs/rpc_pipefs /var/lib/nfs/v4recovery \
+    && mkdir -p \
+      /var/lib/nfs/rpc_pipefs \
+      /var/lib/nfs/v4recovery \
+      /proc/fs/nfsd \
     && echo "rpc_pipefs /var/lib/nfs/rpc_pipefs rpc_pipefs defaults 0 0" >> /etc/fstab \
     && echo "nfsd /proc/fs/nfsd nfsd defaults 0 0" >> /etc/fstab \
 
 # Ensure exports is empty
 RUN set -x \
-    && echo "" > /etc/exports \
+    && echo -n > /etc/exports
 
 RUN set -x \
     && mkdir -p /log \

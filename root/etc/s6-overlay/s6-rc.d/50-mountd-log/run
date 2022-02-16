@@ -1,4 +1,4 @@
-#!/command/with-contenv sh
+#!/command/with-contenv /bin/sh
 program_name="mountd"
 
 s6-format-filter "%1 %s" "[${program_name}]" | logutil-service /log/"${program_name}"
