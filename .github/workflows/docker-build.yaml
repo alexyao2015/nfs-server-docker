@@ -56,7 +56,7 @@ jobs:
       - name: Save tarball
         run: |
           set -x
-          docker save --output ci-${{ matrix.hass_arch }}-${{ github.run_number }}.tar.gz ci:${{ github.run_number }}
+          docker save --output ci-${{ github.run_number }}.tar.gz ci:${{ github.run_number }}
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
