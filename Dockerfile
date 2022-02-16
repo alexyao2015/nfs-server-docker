@@ -37,8 +37,8 @@ RUN set -x \
 RUN set -x \
     && echo "" > /etc/exports
 
-COPY --from=rootfs /rootfs /
 COPY --from=s6downloader /s6downloader /
+COPY --from=rootfs /rootfs /
 
 # System settings
 ENV \
