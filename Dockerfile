@@ -49,7 +49,7 @@ ENV \
 ENV \
     DEFAULT_MOUNT_SETTINGS="*(rw,fsid=0,async,subtree_check,no_auth_nlm,insecure,no_root_squash)" \
     MOUNTD_ARGUMENTS="--no-udp --no-nfs-version 2 --no-nfs-version 3" \
-    NFSD_ARGUMENTS="--debug 8 --no-udp --no-nfs-version 2 --no-nfs-version 3" \
+    NFSD_ARGUMENTS="--debug 8 --no-udp --no-nfs-version 2 --no-nfs-version 3"
 
 
 ENTRYPOINT ["/init"]
