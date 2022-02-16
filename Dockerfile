@@ -53,3 +53,6 @@ ENV \
 
 
 ENTRYPOINT ["/init"]
+
+# NFS TCP
+EXPOSE 2049
