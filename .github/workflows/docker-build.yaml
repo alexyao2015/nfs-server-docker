@@ -93,7 +93,7 @@ jobs:
 
       - name: Import image
         run: |
-          docker load --input ci-${{ matrix.arch }}-${{ github.run_number }}.tar.gz
+          docker load --input ci-${{ github.run_number }}.tar.gz
       - name: Docker login
         run: |
           docker login ${{ matrix.registry.url }} -u ${{ secrets[matrix.registry.username] }} -p ${{ secrets[matrix.registry.password] }}
