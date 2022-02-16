@@ -1,0 +1,15 @@
+#!/command/with-contenv sh
+. "/usr/local/bin/logger"
+# ==============================================================================
+# mountd
+# Run the NFS server daemon
+# ==============================================================================
+
+echo "Starting mountd..." | info
+
+exec \
+    fdmove -c 2 1 \
+      /usr/sbin/rpc.mountd \
+        --foreground \
+        --debug all \
+        "${MOUNTD_ARGUMENTS}"

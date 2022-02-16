@@ -1,0 +1,12 @@
+#!/command/with-contenv sh
+. "/usr/local/bin/logger"
+# ==============================================================================
+# rpcbind
+# Run rpcbind
+# ==============================================================================
+
+echo "Starting rpcbind..." | info
+
+exec \
+    fdmove -c 2 1 \
+      /sbin/rpcbind -f

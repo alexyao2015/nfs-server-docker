@@ -1,0 +1,12 @@
+#!/command/with-contenv sh
+. "/usr/local/bin/logger"
+# ==============================================================================
+# exportfs
+# Export the NFS shares
+# ==============================================================================
+
+echo "Exporting NFS shares using exportfs..." | info
+
+exec \
+    fdmove -c 2 1 \
+      /usr/sbin/exportfs -rv

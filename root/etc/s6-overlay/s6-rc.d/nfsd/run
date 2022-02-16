@@ -1,0 +1,14 @@
+#!/command/with-contenv sh
+. "/usr/local/bin/logger"
+# ==============================================================================
+# nfsd
+# Start the NFS server process
+# ==============================================================================
+
+echo "Starting nfsd..." | info
+# Make oneshot
+
+exec \
+    fdmove -c 2 1 \
+      /usr/sbin/rpc.nfsd \
+      "${NFSD_ARGUMENTS}"
