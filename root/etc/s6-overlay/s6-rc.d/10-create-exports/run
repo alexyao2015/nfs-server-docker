@@ -27,6 +27,7 @@ while true; do
     else
         mount_settings="${DEFAULT_MOUNT_SETTINGS}"
         echo "The mount settings for shared directory ${i} have not been defined" | warn "[${program_name}] "
+        echo "You can define mount_settings by adding MOUNT_SETTINGS_${i} to the environment" | warn "[${program_name}] "
         echo "Using default settings for this mount point" | warn "[${program_name}] "
     fi
     echo "Using the following settings for mount ${i}:" | info "[${program_name}] "
