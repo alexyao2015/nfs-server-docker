@@ -7,8 +7,16 @@
 
 echo "Starting nfsd..." | info
 
+fdmove -c 2 1 \
+  /usr/sbin/rpc.nfsd \
+    ${NFSD_ARGUMENTS}
+
+fdmove -c 2 1 \
+  /usr/sbin/rpc.nfsd \
+    0
+
 # shellcheck disable=SC2086
 exec \
     fdmove -c 2 1 \
       /usr/sbin/rpc.nfsd \
-      ${NFSD_ARGUMENTS}
+        ${NFSD_ARGUMENTS}
