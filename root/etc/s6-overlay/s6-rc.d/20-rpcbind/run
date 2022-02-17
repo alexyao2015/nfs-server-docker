@@ -9,4 +9,4 @@ echo "Starting rpcbind..." | info
 
 exec \
     fdmove -c 2 1 \
-      /sbin/rpcbind -fd
+      /sbin/rpcbind -f

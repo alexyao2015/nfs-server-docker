@@ -8,7 +8,8 @@ services:
     restart: always
     privileged: true
     volumes:
-      - ./nfs/:/data/nfs/
-      - ./log:/log
+      - ./testdata/nfs/:/data/nfs/
+      - ./testdata/log:/log
     environment:
-      - SHARED_DIRECTORY_1=/data/nfs
+      - SHARED_DIRECTORY_1="/data/nfs"
+      - MOUNT_SETTINGS_1="*(rw,fsid=0,async,subtree_check,no_auth_nlm,insecure,no_root_squash)"
