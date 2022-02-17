@@ -6,8 +6,12 @@
 # ==============================================================================
 
 echo "Mounting nfsd..." | info
-
+df
+ls -l /proc/fs/nfsd
 mount -a
+echo "Post mount" | info
+df
+ls -l /proc/fs/nfsd
 
 echo "Starting mountd..." | info
 
