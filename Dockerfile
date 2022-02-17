@@ -25,7 +25,8 @@ FROM alpine:latest
 
 RUN set -x \
     && apk add \
-        nfs-utils
+        nfs-utils \
+        iproute2
 
 # Configure for NFS v4 support
 RUN set -x \

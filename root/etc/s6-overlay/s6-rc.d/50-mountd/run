@@ -5,14 +5,6 @@
 # Run the NFS server daemon
 # ==============================================================================
 
-echo "Mounting nfsd..." | info
-df
-ls -l /proc/fs/nfsd
-mount -a
-echo "Post mount" | info
-df
-ls -l /proc/fs/nfsd
-
 echo "Starting mountd..." | info
 
 # shellcheck disable=SC2086
