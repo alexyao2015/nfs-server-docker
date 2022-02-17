@@ -5,6 +5,10 @@
 # Run the NFS server daemon
 # ==============================================================================
 
+echo "Mounting nfsd..." | info
+
+mount -a
+
 echo "Starting mountd..." | info
 
 # shellcheck disable=SC2086
