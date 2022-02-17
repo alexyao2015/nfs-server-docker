@@ -1,7 +1,0 @@
-#!/command/with-contenv /bin/sh
-. "/usr/local/bin/logger"
-program_name="fix-permissions"
-
-echo "Fixing permissions for /log..." | info "[${program_name}]"
-chown -R nobody:nobody /log
-chmod -R 755 /log

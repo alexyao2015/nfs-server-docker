@@ -1,7 +1,7 @@
-#!/command/with-contenv /bin/sh
+#!/command/with-contenv sh
 
 log() {
-  echo "${1}" | s6-tai64n | s6-tai64nlocal | cat
+  echo "${1}"
 }
 
 logtime() {

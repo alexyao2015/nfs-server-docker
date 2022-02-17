@@ -1,4 +1,4 @@
-#!/command/with-contenv /bin/sh
+#!/command/with-contenv sh
 . "/usr/local/bin/logger"
 program_name="create-exports"
 
@@ -9,6 +9,9 @@ if [ -z "${SHARED_DIRECTORY_1}" ]; then
   echo "For example, the first one will be SHARED_DIRECTORY_1" | error "[${program_name}] "
   exit 1
 fi
+
+# Ensure exports is empty
+echo -n > /etc/exports
 
 i=1
 while true; do

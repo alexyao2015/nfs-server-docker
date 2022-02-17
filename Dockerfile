@@ -51,7 +51,8 @@ COPY --from=rootfs /rootfs /
 # System settings
 ENV \
     S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
-    S6_LOGGING_SCRIPT="n10 s1000000 T"
+    S6_LOGGING_SCRIPT="n10 s1000000 T 1 T" \
+    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0
 
 # User modifiable settings
 ENV \

@@ -1,4 +1,4 @@
-#!/command/with-contenv /bin/sh
+#!/command/with-contenv sh
 
 /usr/sbin/rpc.nfsd 0
 /run/s6/basedir/bin/halt

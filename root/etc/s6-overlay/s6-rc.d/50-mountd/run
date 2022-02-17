@@ -1,4 +1,4 @@
-#!/command/with-contenv /bin/sh
+#!/command/with-contenv sh
 . "/usr/local/bin/logger"
 # ==============================================================================
 # mountd

@@ -1,4 +1,5 @@
-#!/command/with-contenv /bin/sh
+#!/command/with-contenv sh
+
 program_name="rpcbind"
 
-s6-format-filter "%1 %s" "[${program_name}]" | logutil-service /log/"${program_name}"
+s6-format-filter "%1 %s" "[${program_name}]" | s6-log -b -- n10 s1000000 T 1 T /log/"${program_name}"
