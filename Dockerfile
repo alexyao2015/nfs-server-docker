@@ -21,7 +21,7 @@ COPY root .
 
 RUN chmod -R +x *
 
-FROM alpine:latest
+FROM alpine:3.14
 
 RUN set -x \
     && apk add \
