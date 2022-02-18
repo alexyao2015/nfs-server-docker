@@ -6,7 +6,9 @@
 # ==============================================================================
 
 echo "Starting rpcbind..." | info
-
-exec \
-    fdmove -c 2 1 \
-      /sbin/rpcbind -f
+while true; do
+    sleep 1
+done
+#exec \
+#    fdmove -c 2 1 \
+#      /sbin/rpcbind -f
