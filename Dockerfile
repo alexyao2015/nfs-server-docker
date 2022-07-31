@@ -60,7 +60,7 @@ ENV \
 # User modifiable settings
 ENV \
     DEFAULT_MOUNT_SETTINGS="*(rw,fsid=0,async,subtree_check,no_auth_nlm,insecure,no_root_squash)" \
-    MOUNTD_ARGUMENTS="--no-udp --no-nfs-version 2 --no-nfs-version 3" \
+    MOUNTD_ARGUMENTS="--no-udp --no-nfs-version 2 --no-nfs-version 3 8" \
     NFSD_ARGUMENTS="--debug 8 --no-udp --no-nfs-version 2 --no-nfs-version 3"
 
 
