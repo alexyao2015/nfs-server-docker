@@ -24,7 +24,7 @@ RUN chmod -R +x *
 # The version of nfs-utils 2.5.4 included in alpine 3.15
 # has a bug where it doesn't work with v4 of the linux kernel
 # https://bugzilla.redhat.com/show_bug.cgi?id=1979816
-FROM alpine:3.14
+FROM alpine:latest
 
 RUN set -x \
     && apk add \
